@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to validate string length and ID security
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // App live data collection (Public read for visitors, write for data sync)
+    match /app_data/{docId} {
+      allow read: if true;
+      allow write: if isValidId(docId);
+    }
+
+    // Default safety deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

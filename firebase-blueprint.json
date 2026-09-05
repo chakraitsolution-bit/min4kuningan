@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "AppData": {
+      "title": "AppData",
+      "description": "Master state for MIN 4 Kuningan website containing profile, settings, news, gallery, and informations",
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "object",
+          "description": "Madrasah profile details"
+        },
+        "settings": {
+          "type": "object",
+          "description": "Website settings, logo, banners and themes"
+        },
+        "informations": {
+          "type": "object",
+          "description": "Information categories (sejarah, visimisi, tujuan, etc)"
+        },
+        "news": {
+          "type": "array",
+          "description": "News and announcements articles"
+        },
+        "slideshow": {
+          "type": "array",
+          "description": "Hero banner slides"
+        },
+        "gallery": {
+          "type": "array",
+          "description": "School activity photo gallery"
+        },
+        "quickLinks": {
+          "type": "array",
+          "description": "Quick navigation links"
+        },
+        "gtkList": {
+          "type": "array",
+          "description": "Teachers and staff list"
+        },
+        "users": {
+          "type": "array",
+          "description": "User accounts and administrative credentials"
+        },
+        "about": {
+          "type": "object",
+          "description": "About section statistics and facilities"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last updated ISO timestamp"
+        }
+      }
+    }
+  },
+  "firestore": {
+    "/app_data/{docId}": {
+      "schema": "AppData",
+      "description": "Global live state synchronized in real-time across all devices and browsers"
+    }
+  }
+}

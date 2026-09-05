@@ -1,0 +1,6 @@
+{
+  "name": "Portal Resmi MIN 4 Kuningan",
+  "description": "Website Resmi Madrasah Ibtidaiyah Negeri 4 Kuningan dengan portal informasi, berita, galeri, dan panel administrasi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
